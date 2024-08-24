@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<center>
+<div class="container" style="margin-bottom:100px;">
+  <h1 class = "text-success h2">Your Order Placed Successfully</h1>
+  <p>Thank You........</p>
+  <a class="btn btn-danger" href="{% url 'shop:allProductCat' %}">Continue Shopping</a>
+</div>
+</center>
+{% endblock %}

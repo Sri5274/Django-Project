@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div>
+    <img src="{% static 'images/banner.jpg' %}" height="300px" width="1495px">
+    <center>
+    <h4 style="color:#000080;">Our Collections</h4>
+        <p style="font-family: 'Playfair Display', serif; font-family: 'Roboto', sans-serif; font-family: 'Source Sans Pro', sans-serif; font-size:14px;">
+            <i>Our collections provides variety of clothing brands, Jewellery, Household Appliances, Kitchenwares etc.
+                We offer an easy way to group products by category, making it simple for customers to find what they are looking for.<br>
+                We provide an excellent shopping experience for our customers.</i></p>
+    </center>
+</div>
+<div class="container" style="margin-bottom : 100px;">
+<div class="row mx-auto">
+    {% for i in c %}
+        <div class = "col-sm-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{{i.image.url}}" style="height:250px; width:100%;" class="card-img-top" alt="{{i.name}}">
+                <div class="card-body">
+                    <center><h5 class="card-title title_heading">{{i.name}}</h5></center>
+                    <a href="{% url 'shop:allproducts' i.slug %}" class="btn btn-primary link">PRODUCTS</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+</div>
+{% endblock %}
